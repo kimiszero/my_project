@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+    <!-- zerofit/ CSS -->
+    <link rel="stylesheet" href="../static/header.css">
+    <link rel="stylesheet" href="../static/section01.css">
+    <link rel="stylesheet" href="../static/section02.css">
+    <link rel="stylesheet" href="../static/section03.css">
+    <link rel="stylesheet" href="../static/section04.css">
+    <link rel="stylesheet" href="../static/section05.css">
+    <link rel="stylesheet" href="../static/section06.css">
+    <link rel="stylesheet" href="../static/footer.css">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#myreview").html("");
+            showReview();
+        });
+
+        function showReview(){
+            $.ajax({
+                type: 'GET',
+                url: '/api/list',
+                data: {},
+                success: function (response) {
+                    if (response['result'] == 'success') {
+                        let reviews = response['reviews'];
+                        for (let i = 0; i < reviews.length; i++) {
+                            let image = reviews[i]['image'];
+                            let user_info = reviews[i]['user_info'];
+                            let title = reviews[i]['title'];
+                            let desc = reviews[i]['desc'];
+                            let temp = `<li>
+                                            <a href="" target="_blank">
+                                                <div class="wrap">
+                                                    <div class="con01">
+                                                        <img src="../static/images/${image}" alt="">
+                                                    </div>
+                                                    <div class="con02">
+                                                        <h2>${user_info}</h2>
+                                                        <h1>${title}</h1>
+                                                        <p>${desc}</p>
+                                                        <span class="learn_more">자세히 보기</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>`
+                            $('#myreview').append(temp);
+                        }
+                    }
+                }
+            });
+
+        }
+    </script>
+    <title>제로핏 :: 찾아가는 전문 코치</title>
+</head>
+<body>
+<header>
+    <div class="sec1">
+        <img src="https://cdn.homefit.co.kr/image/banner/top_banner_pc.jpg?rev=96" alt="">
+    </div>
+    <div class="sec2">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#">🏠 Z  E  R  O  F  I  T</a>
+            <div class="collapse navbar-collapse" id="navbarNav1">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">프로그램 등록</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav2">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">로그인<span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <!-- 로그인 후 인증이미지-->
+                    <!-- <li class="nav-item active">-->
+                    <!-- <img class="nav-link" src="https://as2.ftcdn.net/jpg/02/29/75/83/500_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" href="#">-->
+                    <!-- </li>-->
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="content">
+    <div class="section01">
+        <div class="sec01">
+            <div class="wrapper">
+                <h4>새해엔 꼭,</h4>
+                <h1>이룰 수 있도록</h1>
+            </div>
+        </div>
+        <div class="sec02">
+            <img src="../static/images/sec01.jpg" alt="메인이미지">
+        </div>
+        <div class="sec03">
+            <div class="wrapper">
+                <p>
+                    🏠🏃<br>
+                    당신이 편안한 집으로,<br>
+                    검증된 코치가 찾아갑니다.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="section02">
+        <div class="wrapper">
+            <div class="sec01">
+                <p>운동은 하고 싶지만 고민되는 것들이 있으셨죠?</p>
+                <h3>당신의 고민을<br>홈핏으로 해결하세요</h3>
+            </div>
+            <div class="sec02">
+                <button onclick="changeColor()" class="slick-prev slick-arrow" aria-label="Previous" type="button"> < </button>
+                <li class="slick-slide" data-slick-index="2" aria-hidden="false" tabindex="0" role="tabpanel" id="slick-slide01" aria-describedby="slick-slide-control02">
+                    <strong class="emo">🤕 😵 🤕</strong>
+                    <p>아픈 곳 신경 안 쓰고<br>단체 레슨만 따라 하다가<br>통증이 더 심해졌어요 </p>
+                </li>
+                <li class="slick-slide" data-slick-index="2" aria-hidden="false" tabindex="0" role="tabpanel" id="slick-slide02" aria-describedby="slick-slide-control02">
+                    <strong class="emo">🤕 😵 🤕</strong>
+                    <p>아픈 곳 신경 안 쓰고<br>단체 레슨만 따라 하다가<br>통증이 더 심해졌어요 </p>
+                </li>
+                <li class="slick-slide" data-slick-index="2" aria-hidden="false" tabindex="0" role="tabpanel" id="slick-slide03" aria-describedby="slick-slide-control02">
+                    <strong class="emo">🤕 😵 🤕</strong>
+                    <p>아픈 곳 신경 안 쓰고<br>단체 레슨만 따라 하다가<br>통증이 더 심해졌어요 </p>
+                </li>
+                <button onclick="changeColor()" class="slick-prev slick-arrow" aria-label="Previous" type="button"> > </button>
+            </div>
+            <div class="sec03">
+                <ul class="slick-dots" role="tablist">
+                    <li class="" role="presentation">
+                        <button type="button" role="tab" id="slick-slide-control00" aria-controls="slick-slide00" aria-label="1 of 2" tabindex="-1">1</button></li>
+                    <li role="presentation" class="">
+                        <button type="button" role="tab" id="slick-slide-control01" aria-controls="slick-slide01" aria-label="2 of 2" tabindex="-1">2</button></li>
+                    <li role="presentation" class="">
+                        <button type="button" role="tab" id="slick-slide-control02" aria-controls="slick-slide02" aria-label="3 of 2" tabindex="-1">3</button></li>
+                    <li role="presentation" class="slick-active">
+                        <button type="button" role="tab" id="slick-slide-control03" aria-controls="slick-slide03" aria-label="4 of 2" tabindex="0" aria-selected="true">4</button></li>
+                    <li role="presentation" class="">
+                        <button type="button" role="tab" id="slick-slide-control04" aria-controls="slick-slide04" aria-label="5 of 2" tabindex="-1">5</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section03">
+        <div class="sec01">
+            <h3>부담없이 편한 장소에서<br>홈핏을 시작하세요</h3>
+        </div>
+        <div class="sec02">
+            <ul>
+                <li class="li clearfix">
+                    <p class="img_wrap"><img src="https://dcse8twossp9.cloudfront.net/static/img/main/pic/pic_start01.jpg" alt="코치가 자세를 코칭하고 있는 이미지"></p>
+                    <div class="con">
+                        <strong>공간이 작아도<br>시작할 수 있어요</strong>
+                        <p>매트를 깔 수 있는 공간만 있으면<br>좁은 공간에서도 가능한 수업으로 진행됩니다.</p>
+                    </div>
+                </li>
+
+                <li class = li2 clearfix>
+                    <p class="img_wrap"><img src="https://dcse8twossp9.cloudfront.net/static/img/main/pic/pic_start02.jpg" alt="코치가 자세를 코칭하고 있는 이미지"></p>
+                    <div class="discon">
+                        <strong>운동 기구가 없어도<br>괜찮아요</strong>
+                        <p>수업에 필요한 소도구는 코치가 준비하며<br>회원님은 개인용 매트만 준비해주세요.</p>
+                    </div>
+                </li>
+
+                <li class = li clearfix>
+                    <p class="img_wrap"><img src="https://dcse8twossp9.cloudfront.net/static/img/main/pic/pic_start03.jpg" alt="코치가 관리해주는 이미지"></p>
+                    <div class="con">
+                        <strong>원하는 장소 어디든<br>찾아가요</strong>
+                        <p>집뿐만 아니라 사무실, 근처 공원, 헬스장 등<br>회원님이 원하는 장소로<br>코치님이 찾아가 운동을 도와드립니다.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="section04">
+        <div class="sec01">
+            <h3>불만율 제로의<br>검증된 코치 시스템</h3>
+        </div>
+        <div class="sec02">
+            <ol class="wrapper">
+                <li class="system01">3년 이상 경력과 자격증<br><strong>인증 사전 심사</strong></li>
+                <li class="system02">홈핏 매니저와<br><strong>철저한 대면 심사</strong></li>
+                <li class="system03">전문적인 수업을 위한<br><strong>홈핏 코치 교육</strong></li>
+                <li class="system04">수업 피드백을 통한<br><strong>지속적인 코치 관리</strong></li>
+            </ol>
+        </div>
+    </div>
+    <div class="section05">
+        <div class="wrapper">
+            <div class="sec01">
+                <h1><span>홈핏</span> 후기</h1>
+                <h2>실제 홈핏을 이용하신 고객님들의 개선 사례입니다.</h2>
+            </div>
+            <div class="sec02">
+                <ul id="myreview">
+                    <li>
+                        <a href="https://homefit.co.kr/board/view/14321598" target="_blank">
+                            <div class="wrap">
+                                <div class="con01">
+                                    <img src="https://d119p7va4qzm6q.cloudfront.net/image/case/thumb/1.jpg?rev=0.017e" alt="">
+                                </div>
+                                <div class="con02">
+                                    <h2>서울시 노원구 / 20대 직장인 강민정님 / 이청아 코치님</h2>
+                                    <h1>홈핏 코치님과 운동하며, <br><strong>바디프로필 성공했어요!</strong></h1>
+                                    <p>워낙 근육이 없고 복부 경도 비만이었는데, 코치님과 3개월 간 홈핏 방문PT를 시작하며 바디프로필 준비도 할 수 있었어요!</p>
+                                    <span class="learn_more">자세히 보기</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://homefit.co.kr/board/view/14321482" target="_blank">
+                            <div class="wrap">
+                                <div class="con01">
+                                    <img src="https://d119p7va4qzm6q.cloudfront.net/image/case/thumb/2.jpg?rev=0.017e" alt="">
+                                </div>
+                                <div class="con02">
+                                    <h2>용인시 수지구 / 30대 아기 엄마 손○리님 / 이지현 코치님</h2>
+                                    <h1> 운동하면서 아기가 보이니까<br><strong>편하게 집에서 운동했어요.</strong></h1>
+                                    <p>아기와 멀리 나갈 수 없는 아기 엄마는
+                                        집에서 편하게 코치님만 기다리면 되고,
+                                        아기가 뭐하는지 확인하면서 운동할 수 있었어요.</p>
+                                    <span class="learn_more">자세히 보기</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://homefit.co.kr/board/view/14321528" target="_blank">
+                            <div class="wrap">
+                                <div class="con01">
+                                    <img src="https://d119p7va4qzm6q.cloudfront.net/image/case/thumb/3.jpg?rev=0.017e" alt="">
+                                    <div class="uk-position-center"></div>
+                                </div><div class="con02">
+                                <h2>서울시 영등포구 / 20대 윤○진님 / 김황래 코치님</h2>
+                                <h1><strong>친구와 함께 2대 1 레슨으로</strong><br>방문PT를 시작했어요</h1>
+                                <p>헬스장을 혼자 가면 운동이 지겨워 시간 때우기 일쑤였어요. 전문 PT 선생님과 운동하고 싶은 마음이 커졌고 친구와 함께 2대 1 레슨을 시작해보았죠.</p>
+                                <span class="learn_more">자세히 보기</span>
+                            </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="sec03">
+                <a href=""><button>+ 더 보기</button></a>
+                <br><span>* 개인마다 프로그램을 통한 효과는 차이가 있을 수 있습니다.</span>
+                <hr class="uk-divider-small hf_divider">
+            </div>
+        </div>
+    </div>
+    <div class="section06">
+        <div class="sec01">
+            <h3>첫 체험 신청하고<br>더욱 합리적인 방문PT를 시작해보세요</h3>
+        </div>
+        <div class="sec02">
+            <img src="../static/images/coupon.png">
+        </div>
+        <div class="sec03">
+            <span>지금 체험 진행시, 60% 더 저렴한<br>홈핏 프로그램을 만날 수 있습니다!</span>
+        </div>
+        <div class="sec04">
+            <a id="button_bottom_register" href="suggest/" class="regi_btn">체험 신청하기</a>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="sec01">
+        <img src="../static/images/footer.png" alt="">
+    </div>
+    <div class="sec02">
+        <strong class="cs_hours">상담 운영시간 평일 10:30 ~ 17:30</strong>
+        <p class="cs_tel">고객센터 <strong>02-6958-8253</strong></p>
+        <div class="etc">
+            <span>코치지원문의 02-2135-8911</span>
+            <span>마케팅문의 02-2135-9593</span>
+        </div>
+    </div>
+    <div class="sec03">
+        <a href="https://blog.naver.com/homefit_coach" target="new"><i class="fas fa-rss-square"></i> 블로그</a>
+        <a href="https://www.instagram.com/homefit_official" target="new"><i class="fab fa-instagram"></i> 인스타그램</a>
+        <a href="https://www.youtube.com/channel/UCKWaoLU3rNVerZrm1pL2mvw" target="new"><i class="fab fa-youtube"></i> 유튜브</a>
+    </div>
+    <div class="sec04">
+        <p class="first">
+            <span>상호명 (주)홈핏</span>
+            <span>대표 엄선진</span>
+            <a href="/docs/usage/">이용약관</a>
+            <a href="/docs/privacy/">개인정보취급방침</a>
+        </p>
+        <p class="sec">
+            <span>사업자등록번호 617-86-27572 (홈핏 스튜디오:158-60-00244)</span>
+            <a href="http://www.ftc.go.kr/www/bizCommView.do?key=232&amp;apv_perm_no=2017310018430200112&amp;pageUnit=10&amp;searchCnd=wrkr_no&amp;searchKrwd=6178627572&amp;pageIndex=1" class="info_btn">사업자 정보 확인</a>
+            <span>통신판매신고번호 제 2017-서울노원-0112호</span>
+        </p>
+        <p class="third">
+            <span>서울특별시 강남구 선릉로 108길 51 3층</span>
+            <span>이메일 help@homefit.co.kr</span>
+            <span>제휴문의 marketing@homefit.co.kr</span>
+        </p>
+        <p class="copy">© 2017 HOMEFIT Inc. All rights reserved.</p>
+    </div>
+</footer>
+</div>
+</body>
+</html>

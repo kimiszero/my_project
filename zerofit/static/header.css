@@ -1,0 +1,68 @@
+
+header{
+    margin: 0 auto 10px auto;
+    background-color: white;
+    border-bottom: 1px solid lightgrey;
+    position: fixed;
+    width: 1700px;
+    display: block;
+}
+
+header .sec1{
+    color: #000000;
+    background-color: black;
+    height: 100px;
+    display: block;
+    width: 100%;
+    margin: -14px 0px 14px 0px;
+    padding: 0px;
+    max-width: 100%;
+}
+
+
+header img{
+    height: 90px;
+    padding-left: 500px;
+    margin-top: 5px;
+}
+
+header .sec2{
+    margin: auto auto 10px auto;
+    width: 100%;
+}
+
+.navbar{
+    margin-left:230px;
+    margin-right: 230px;
+}
+
+.navbar-brand{
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 139px;
+    height: 27px
+
+}
+
+.nav-item{
+    color: #4a4a4a;
+    margin: 11px 32px 0 0;
+}
+
+#navbarNav1{
+    margin-left: 60px;
+    font-weight: bold;
+}
+
+#navbarNav2{
+    font-size: 15px;
+    color: #555;
+    margin-left: 500px;
+}
+
+
+.nav-item img{
+    width: 60px;
+    height: 60px;
+}

@@ -1,0 +1,16 @@
+.reg_content{
+    width: 1068px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reg_content .section01{
+    text-align: center;
+    padding: 69px 0 100px 0;
+    font-weight: bold;
+    font-size: 45px;
+}
+
+.reg_content .section01 .m-tit{
+    padding-top: 69px;
+}

@@ -1,0 +1,46 @@
+.section01{
+    text-align: center;
+    padding-top: 69px;
+    color: rgb(74, 74, 74);
+}
+
+.section01 .wrapper{
+    width: 940px;
+    margin: 0 auto;
+    padding-top: 69px;
+    font-size: 26px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    height: 240px;
+    text-align: center;
+}
+
+.section01 h4{
+    font-size: 26px;
+    padding-top: 50px;
+}
+
+.section01 h1{
+    font-size: 56px;
+    font-weight: bold;
+}
+
+.section01 img{
+    padding-top: 50px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.section01 .sec03{
+    height: 240px;
+}
+
+.section01 .sec03 p{
+    padding-top: 77px;
+    font-size: 24px;
+    font-weight: 400;
+}
