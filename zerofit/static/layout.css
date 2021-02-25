@@ -1,0 +1,158 @@
+
+header{
+    width: 1461px;
+    top: 0px;
+    width: 100vw;
+    outline-width: 0;
+    outline: 0;
+    outline-style: none;
+    z-index: 900;
+    margin: 0 auto 10px auto;
+    background-color: white;
+    border-bottom: 1px solid lightgrey;
+    position: fixed;
+    display: block;
+    padding: 14px 0px 22px 0px;
+
+}
+
+header .wrapper{
+    box-sizing: border-box;
+}
+
+header .sec1{
+    color: #000000;
+    background-color: black;
+    width: 100%;
+    height: 90px;
+    display: block;
+    margin: -14px 0px 14px 0px;
+    padding: 0px;
+}
+
+
+header img{
+    height: 90px;
+    padding-left: 500px;
+}
+
+header .sec2{
+    width: auto;
+    padding-bottom: 22px;
+    margin-top: 10px;
+}
+
+.navbar{
+    margin-left:230px;
+    margin-right: 230px;
+    height: 27px;
+}
+
+.navbar-brand{
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 139px;
+    height: 27px
+
+}
+
+.nav-item{
+    color: #4a4a4a;
+    margin: 11px 32px 0 0;
+}
+
+#navbarNav1{
+    margin-left: 60px;
+    font-weight: bold;
+}
+
+#navbarNav2{
+    font-size: 15px;
+    color: #555;
+    margin-left: 500px;
+}
+
+.content{
+    margin-top: 154px;
+}
+
+footer{
+    width: 1068px;
+    margin-left: auto;
+    margin-right: auto;
+    /**********************/
+    margin-top: 500px;
+    /**********************/
+}
+
+footer .section01{
+    display: flex;
+    padding: 60px 0 26px 24px;
+    border-top: 1px solid #e1e1eb;
+    color: #000000;
+    margin: 0;
+}
+
+footer .section01 div{
+    margin-right: 40px;
+    padding: 0;
+}
+
+footer .section02{
+    padding-left: 24px;
+}
+
+footer .section02 div{
+    display: flex;
+}
+
+footer .section02 .info-item{
+    font-size: 12px;
+    line-height: 20px;
+    color: #555555;
+}
+
+footer .section02 i{
+    display: inline-flex;
+    align-items: center;
+    font-style: normal;
+    color: #555555;
+    padding: 0 8px;
+    opacity: 0.8;
+}
+
+footer .section03{
+    display: flex;
+    margin-top: 20px;
+    padding-left: 24px;
+}
+
+footer .section03 .sv-item{
+    font-size: 12px;
+    line-height: 20px;
+    color: #555555;
+}
+
+footer .section03 a{
+    text-decoration: none;
+    cursor: pointer;
+    color: #000000;
+}
+
+footer .section03 i{
+    display: inline-flex;
+    align-items: center;
+    font-style: normal;
+    color: #555555;
+    padding: 0 8px;
+    opacity: 0.8;
+}
+
+footer .section04{
+    font-size: 12px;
+    line-height: 20px;
+    color: #555555;
+    margin-top: 20px;
+    padding-left: 24px;
+}

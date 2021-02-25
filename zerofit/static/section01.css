@@ -1,46 +1,40 @@
-.section01{
-    text-align: center;
-    padding-top: 69px;
-    color: rgb(74, 74, 74);
+
+.content .section01{
+    margin: 0;
+    padding: 0;
 }
 
-.section01 .wrapper{
-    width: 940px;
-    margin: 0 auto;
-    padding-top: 69px;
-    font-size: 26px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    height: 240px;
-    text-align: center;
+.content .section01 img{
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-.section01 h4{
-    font-size: 26px;
-    padding-top: 50px;
+.content .section02 {
+    margin-top: 60px;
+    width: 1068px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.section01 h1{
-    font-size: 56px;
+.content .section02 .sec01{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.content .section02 .sec01 .p1{
+    color: #6400c8;
     font-weight: bold;
+    font-size: 45px;
 }
 
-.section01 img{
-    padding-top: 50px;
-    overflow: hidden;
-    width: 100%;
+.content .section02 .sec01 .p2{
+    margin-top: 16px;
+    font-size: 20px;
+    color: #000000;
 }
 
-.section01 .sec03{
-    height: 240px;
-}
-
-.section01 .sec03 p{
-    padding-top: 77px;
-    font-size: 24px;
-    font-weight: 400;
+.content .section02 .sec02{
+    margin-top: 160px;
 }

@@ -315,5 +315,47 @@
     </div>
 </footer>
 </div>
+<script>
+        $(document).ready(function () {
+            $("#myreview").html("");
+            showReview();
+        });
+
+        function showReview(){
+            $.ajax({
+                type: 'GET',
+                url: '/api/list',
+                data: {},
+                success: function (response) {
+                    if (response['result'] == 'success') {
+                        let reviews = response['reviews'];
+                        for (let i = 0; i < reviews.length; i++) {
+                            let image = reviews[i]['image'];
+                            let user_info = reviews[i]['user_info'];
+                            let title = reviews[i]['title'];
+                            let desc = reviews[i]['desc'];
+                            let temp = `<li>
+                                            <a href="" target="_blank">
+                                                <div class="wrap">
+                                                    <div class="con01">
+                                                        <img src="../static/images/${image}" alt="">
+                                                    </div>
+                                                    <div class="con02">
+                                                        <h2>${user_info}</h2>
+                                                        <h1>${title}</h1>
+                                                        <p>${desc}</p>
+                                                        <span class="learn_more">자세히 보기</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>`
+                            $('#myreview').append(temp);
+                        }
+                    }
+                }
+            });
+
+        }
+    </script>
 </body>
 </html>

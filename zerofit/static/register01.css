@@ -1,16 +1,12 @@
-.reg_content{
-    width: 1068px;
-    margin-left: auto;
-    margin-right: auto;
+
+.content .section01{
+    margin: 0;
+    padding: 0;
 }
 
-.reg_content .section01{
-    text-align: center;
-    padding: 69px 0 100px 0;
-    font-weight: bold;
-    font-size: 45px;
+.content .section01 img{
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-.reg_content .section01 .m-tit{
-    padding-top: 69px;
-}
