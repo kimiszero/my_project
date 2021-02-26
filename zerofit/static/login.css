@@ -1,0 +1,118 @@
+.content .wrapper{
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    margin: 50px auto 100px auto;
+    text-align: center;
+    position: relative;
+}
+
+.section01{
+    box-sizing: border-box;
+    margin: 200px 0px;
+    border: 1px solid #eae8e5;
+    padding: 34px 28px;
+    text-align: left;
+}
+
+.section01 h4{
+    font-size: 18px;
+}
+
+.section01 h4 strong{
+    font-weight: bolder;
+}
+
+.section01 form{
+    display: block;
+    margin-top: 0em;
+    text-align: left;
+}
+
+.section01 .login-form div{
+    position: relative;
+    display: block;
+}
+
+
+.section01 .login-form .uk-block span{
+    top: -12px;
+    left: 2px;
+    position: absolute;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+    font: inherit;
+    text-transform: none;
+    padding: 0;
+    background-color: transparent;
+    display: inline-block;
+    fill: currentcolor;
+    line-height: 0;
+}
+
+.section01 .login-form .uk-block svg{
+    vertical-align: middle;
+    overflow: hidden;
+    transform: translate(0,0);
+    margin-top: 22px;
+    margin-left: 5px;
+}
+
+.section01 .login-form .uk-block svg polyline{
+    stroke: currentcolor;
+}
+
+.section01 .login-form .uk-block input{
+    box-sizing: border-box !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    height: auto !important;
+    font-size: 14px !important;
+    margin-bottom: 12px;
+    border-radius: 3px;
+    padding-right: 8px;
+    padding-left: 40px!important;
+    max-width: 100%;
+    width: 100%;
+    background: #fff;
+    color: #666;
+    border: 1px solid #e5e5e5;
+}
+
+.section01 .login-form .login_email{
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 3px;
+    background-color: #c29b6a;
+    color: #ffffff;
+    border: 1px solid #c29b6a;
+    display: block;
+    width: 60%;
+    margin: 0px auto;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    outline-width: 0;
+    outline: 0;
+    outline-style: none;
+    touch-action: manipulation;
+}
+
+.section01 .login-form .tiny_link{
+    margin: 8px 0px 0px 0px;
+    padding: 0px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.section01 .login-form .tiny_link a{
+    font-size: 12px;
+    margin-right: 16px;
+    border-bottom: 1px dotted #555;
+    text-decoration: none;
+    color: inherit;
+}

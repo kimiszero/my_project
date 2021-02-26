@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block style %}
+<link rel="stylesheet" href="../static/join.css">
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+    <div class="section01">
+        <div class="sec01">
+            <h4><strong>이메일</strong>로 회원가입</h4>
+        </div>
+        <div class="sec02">
+            <form class="register-form" id="hf_user_register_form_id" >
+                <div class="uk-block">
+                    <span class="uk-form-icon uk-icon" uk-icon="icon: mail"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <polyline fill="none" stroke="#000" points="1.4,6.5 10,11 18.6,6.5"></polyline>
+                        <path d="M 1,4 1,16 19,16 19,4 1,4 Z M 18,15 2,15 2,5 18,5 18,15 Z"></path>
+                    </svg>
+                    </span>
+                    <input class="input_default uk-input uk-form-small" type="email" id="hf_user_register_form_email_id" name="email" placeholder="이메일">
+                </div>
+
+                <div class="uk-block">
+                    <span class="uk-form-icon uk-icon" uk-icon="icon: lock"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <rect fill="none" stroke="#000" height="10" width="13" y="8.5" x="3.5"></rect> <path fill="none" stroke="#000" d="M6.5,8 L6.5,4.88 C6.5,3.01 8.07,1.5 10,1.5 C11.93,1.5 13.5,3.01 13.5,4.88 L13.5,8"></path></svg></span>
+                    <input class="input_default uk-input uk-form-small" type="password" id="hf_user_register_form_pw1_id" name="pw1" placeholder="비밀번호 (6자 이상)" style="ime-mode:disabled">
+                </div>
+
+                <div class="uk-block">
+                    <span class="uk-form-icon uk-icon" uk-icon="icon: lock"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <rect fill="none" stroke="#000" height="10" width="13" y="8.5" x="3.5"></rect> <path fill="none" stroke="#000" d="M6.5,8 L6.5,4.88 C6.5,3.01 8.07,1.5 10,1.5 C11.93,1.5 13.5,3.01 13.5,4.88 L13.5,8"></path></svg></span>
+                    <input class="input_default uk-input uk-form-small" type="password" id="hf_user_register_form_pw2_id" name="pw2" placeholder="비밀번호 확인" style="ime-mode:disabled">
+                </div>
+
+                <label class="agreement" for="hf_user_register_agreement_id">
+                    <input type="checkbox" class="uk-checkbox" name="agree" checked="checked" id="hf_user_register_agreement_id">
+                    <span class="docs_popup usage">이용약관</span> 및 <span class="docs_popup privacy">개인정보취급방침</span>에 동의합니다.</label>
+                <button class="join_email">회원가입</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %} {% endblock %}

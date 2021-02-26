@@ -1,0 +1,128 @@
+.content .wrapper{
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    margin: 50px auto 100px auto;
+    text-align: center;
+    position: relative;
+}
+
+.section01{
+    box-sizing: border-box;
+    margin: 200px 0px;
+    border: 1px solid #eae8e5;
+    padding: 34px 28px;
+    text-align: left;
+}
+
+.section01 .sec01 h4{
+    font-size: 18px;
+}
+
+.section01 .sec01 strong{
+    font-weight: bolder;
+}
+
+.section01 .sec02 form{
+    display: block;
+    margin-top: 0em;
+}
+
+.section01 .sec02 form .uk-block{
+    position: relative;
+    display: block;
+}
+
+.section01 .sec02 form .uk-block span{
+    top: -12px;
+    left: 2px;
+    color: #999;
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+}
+
+.section01 .sec02 form .uk-block span svg{
+    overflow: hidden;
+    transform: translate(0,0);
+    vertical-align: middle;
+}
+
+
+.section01 .sec02 form .uk-block span svg  polyline{
+    stroke: currentcolor;
+    fill: none;
+    transform-origin: 0px 0px;
+}
+
+.section01 .sec02 form .uk-block span path{
+    transform-origin: 0px 0px;
+}
+
+.section01 .sec02 form input{
+    box-sizing: border-box !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    height: auto !important;
+    font-size: 14px !important;
+    margin-bottom: 12px;
+    border-radius: 3px;
+    padding-right: 8px;
+    padding-left: 40px;
+    max-width: 100%;
+    width: 100%;
+    background: #fff;
+    color: #666;
+    border: 1px solid #e5e5e5;
+    transition: .2s ease-in-out;
+    transition-property: color,background-color,border;
+}
+
+.section01 .sec02 form label{
+    cursor: pointer;
+    font-size: 13px;
+    box-sizing: border-box;
+    margin: 4px 0px 14px 0px !important;
+    display: block;
+    color: #716b62;
+    font-weight: 300;
+    touch-action: manipulation;
+}
+
+.section01 .sec02 form label input{
+    vertical-align: top;
+    margin-top: 3px;
+    margin-right: 3px;
+    background-color: #c29b6a;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    overflow: hidden;
+    background-position: 50% 50%;
+    border: 1px solid #ccc;
+}
+
+.section01 .sec02 form label span{
+    color: #716b62;
+    border-bottom: 1px dotted #716b62;
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.section01 .sec02 form .join_email{
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 3px;
+    background-color: #c29b6a;
+    color: #ffffff;
+    border: 1px solid #c29b6a;
+    display: block;
+    width: 60%;
+    margin: 0px auto;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}

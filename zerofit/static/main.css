@@ -1,0 +1,139 @@
+
+.content .section01{
+    margin: 0;
+    padding: 0;
+}
+
+.content .section01 img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.content .section02 {
+    margin-top: 60px;
+    width: 1068px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content .section02 .sec01{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.content .section02 .sec01 .p1{
+    color: #6400c8;
+    font-weight: bold;
+    font-size: 45px;
+}
+
+.content .section02 .sec01 .p2{
+    margin-top: 16px;
+    font-size: 20px;
+    color: #000000;
+}
+
+.content .section02 .sec02{
+    margin-top: 160px;
+}
+
+.content .section02 .sec02 .item-list{
+    display: flex;
+    justify-content: space-between;
+}
+
+.content .section02 .sec02 .item{
+    width: 340px;
+    text-align: center;
+    color: #000000;
+}
+
+.content .section02 .sec02 img{
+    width: 100%;
+    height: auto;
+}
+
+.content .section02 .sec02 .p2{
+    font-weight: 700;
+    margin-top: 24px;
+    font-size: 20px;
+}
+
+.content .section02 .sec02 .p3{
+    margin-top: 12px;
+    font-size: 16px;
+}
+
+.content .section03{
+    margin-top: 160px;
+    width: 1068px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content .section03 .sec01{
+    text-align: center;
+}
+
+.content .section03 .sec01 .p1{
+    font-size: 45px;
+}
+
+.content .section03 span{
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.content .section03 .sec02{
+    margin-top: 60px;
+}
+
+.content .section03 .sec02 .item-list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1068px!important;
+    margin-bottom: 100px;
+}
+.content .section03 .sec02 .item-list .item{
+    isplay: inline-block;
+    width: 336px;
+    margin-right: 20px;
+    padding-bottom: 60px;
+}
+.content .section03 .sec02 .item-list .item a{
+    text-decoration: none;
+    cursor: pointer;
+}
+.content .section03 .sec02 .item-list .item img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.content .section03 .sec02 .item-list .item .p2{
+    margin-top: 24px;
+    font-size: 20px;
+    color: #000000;
+}
+
+.content .section03 .sec02 .item-list .item .fwb{
+    margin-top: 24px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.content .section03 .sec02 .item-list .item .desc{
+    margin-top: 12px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    text-align: left;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    color: #000000;
+}

@@ -1,15 +1,13 @@
 {% extends 'layout.html' %}
 
 {% block style %}
-<link rel="stylesheet" href="../static/section01.css">
+<link rel="stylesheet" href="../static/main.css">
 {% endblock %}
 
 {% block content %}
 <div class="section01">
     <img alt="" src="../static/images/main.jpg" class="only_pc">
 </div>
-
-
 <div class="section02">
     <div class="sec01">
         <div class="p1 fwb">단 하나뿐인 나를 위한 운동</div>
@@ -18,36 +16,83 @@
         </div>
     </div>
     <div class="sec02">
-
-    <div class="item-list">
-        <div class="item">
-            <img alt="" src="https://dcse8twossp9.cloudfront.net/static/partner/hamlet/step2/img/home2_1.jpg">
-            <div class="p2">공간이 작아도</div>
-            <div class="p3">매트 하나의 공간만 있으면,
-                <br>수업이 가능합니다.</div>
+        <div class="item-list">
+            <div class="item">
+                <img alt="" src="https://dcse8twossp9.cloudfront.net/static/partner/hamlet/step2/img/home2_1.jpg">
+                <div class="p2">공간이 작아도</div>
+                <div class="p3">매트 하나의 공간만 있으면,
+                    <br>수업이 가능합니다.</div>
+            </div>
+            <div class="item">
+                <img src="https://dcse8twossp9.cloudfront.net/static/partner/hamlet/step2/img/home2_2.jpg">
+                <div class="p2">기구가 없어도</div>
+                <div class="p3">필요한 소도구는 코치가
+                    <br>준비합니다.</div>
+            </div>
+            <div class="item">
+                <img alt="" src="https://dcse8twossp9.cloudfront.net/static/partner/hamlet/step2/img/home2_3.jpg">
+                <div class="p2">언제나 어디서나</div>
+                <div class="p3">사무실, 근처 공원, 헬스장 등
+                    <br>집이 아니어도 괜찮습니다.</div>
+            </div>
         </div>
-        <div class="item">
-            <img src="https://dcse8twossp9.cloudfront.net/static/partner/hamlet/step2/img/home2_2.jpg">
-            <div class="p2">기구가 없어도</div>
-            <div class="p3">필요한 소도구는 코치가
-                <br>준비합니다.</div>
+    </div>
+</div>
+<div class="section03">
+    <div class="sec01">
+        <div class="p1">홈핏
+            <span class="fwb">후기</span>
         </div>
-        <div class="item">
-            <img alt="" src="https://dcse8twossp9.cloudfront.net/static/partner/hamlet/step2/img/home2_3.jpg">
-            <div class="p2">언제나 어디서나</div><div class="p3">사무실, 근처 공원, 헬스장 등<br>집이 아니어도 괜찮습니다.</div></div></div>
-        <div class="row"><a href="/guide/"><div class="btn-info">이용 안내</div></a>
-
-
+    </div>
+    <div class="sec02">
+        <div class="item-list" id="myreview">
+            <div class="item">
+                <a href="/board/view/14321598">
+                    <img alt="review.subTitle" class="" src="https://d119p7va4qzm6q.cloudfront.net/image/board/thumb/14321598.jpg">
+                    <div class="from p2">직장인 강O정님</div>
+                    <div class="subtit fwb p2">홈핏 코치님과 운동하며, 바디프로필 성공!</div>
+                    <div class="desc l3">워낙 근육이 없고 복부 경도 비만이었는데, 코치님과 3개월간 홈핏 방문 PT를 시작하며 바디프로필 준비도 할 수 있었어요!</div>
+                </a>
+            </div>
+        </div>
     </div>
 
-
 </div>
-
-</div>
-<div class="section03"></div>
-<div class="section04"></div>
-<div class="section05"></div>
-<div class="section06"></div>
-
 {% endblock %}
-{% block script %} {% endblock %}
+
+{% block script %}
+<script>
+    $(document).ready(function () {
+        $("#myreview").html("");
+        showReview();
+    });
+
+    function showReview(){
+        $.ajax({
+            type: 'GET',
+            url: '/api/list',
+            data: {},
+            success: function (response) {
+                if (response['result'] == 'success') {
+                    let reviews = response['reviews'];
+                    for (let i = 0; i < reviews.length; i++) {
+                        let image = reviews[i]['image'];
+                        let user_info = reviews[i]['user_info'];
+                        let title = reviews[i]['title'];
+                        let desc = reviews[i]['desc'];
+                        let temp = `<div class="item">
+                                            <a href="#">
+                                                <img alt="review.subTitle" class="" src="../static/images/${image}">
+                                                <div class="from p2">${user_info}</div>
+                                                <div class="subtit fwb p2">${title}</div>
+                                                <div class="desc l3">${desc}</div>
+                                            </a>
+                                        </div>`
+                        $('#myreview').append(temp);
+                    }
+                }
+            }
+        });
+    }
+</script>
+{% endblock %}
