@@ -5,6 +5,8 @@
 {% endblock %}
 
 {% block content %}
+
+{{ user }}}
 <div class="section01">
     <img alt="" src="../static/images/main.jpg" class="only_pc">
 </div>
@@ -65,6 +67,9 @@
     $(document).ready(function () {
         $("#myreview").html("");
         showReview();
+        //getUserNickname()
+        let id = "{{user['id']}}"
+        alert('${id}님 반갑습니다!')
     });
 
     function showReview(){

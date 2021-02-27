@@ -7,7 +7,7 @@
 {% block content %}
 <div class="wrapper">
 	<div class="section01">
-			<h4><strong>이메일</strong>로 로그인</h4>
+			<h4><strong>로그인</strong></h4>
 			<form class="login-form">
 				<div class="uk-block">
 		            <span class="uk-form-icon uk-icon" uk-icon="icon: mail">
@@ -16,7 +16,7 @@
                             <path d="M 1,4 1,16 19,16 19,4 1,4 Z M 18,15 2,15 2,5 18,5 18,15 Z"></path>
                         </svg>
                     </span>
-					<input class="input_default uk-input uk-form-small" type="email" id="hf_user_login_form_email_id" name="email" placeholder="이메일">
+					<input class="input_default uk-input uk-form-small" type="id" id="id" name="email" placeholder="이메일">
 				</div>
 				<div class="uk-block">
 		            <span class="uk-form-icon uk-icon" uk-icon="icon: lock">
@@ -25,7 +25,7 @@
                             <path fill="none" stroke="#000" d="M6.5,8 L6.5,4.88 C6.5,3.01 8.07,1.5 10,1.5 C11.93,1.5 13.5,3.01 13.5,4.88 L13.5,8"></path>
                         </svg>
                     </span>
-					<input class="input_default uk-input uk-form-small" type="password" id="hf_user_login_form_password_id" name="password" placeholder="비밀번호" style="ime-mode:disabled">
+					<input class="input_default uk-input uk-form-small" type="password" id="pw" name="password" placeholder="비밀번호" style="ime-mode:disabled">
 
 				</div>
 				<button class="login_email">이메일 로그인</button>
@@ -34,5 +34,31 @@
 	</div>
 </div>
 {% endblock %}
+<script>
+	function login(){
+		let id = $('#user_id').val();
+        let pw = $('#user_pw').val();
 
+        if (id === '') return alert('아이디를 입력하세요.')
+        if (pw === '') return alert('비밀번호를 입력하세요.')
+
+		 $.ajax({
+                type: 'POST',
+                url: '/api/login',
+                data: {'id_give': id, 'pw_give': pw},
+                success: function (response) {
+                    if (response['result'] == 'success') {
+                    	// jwt 토근을 token_give라는 키 값으로 쿠키에 저장
+                        $.cookie('token_give', response['token'])
+						location.href = '/'
+                    } else {
+                    	//로그인이 안되면 에러메시지를 띄웁니다.
+						alert(response['msg'])
+					}
+                }
+            });
+
+	}
+
+</script>
 {% block script %} {% endblock %}

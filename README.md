@@ -1,7 +1,7 @@
-# project name :: zerofit
+# project name :: zerofit 
 ### HOMEFIT 클론코딩 [2021.02 - 2021. ??]
 
-![project_zerofit](https://user-images.githubusercontent.com/77275707/109255039-8f23fe80-7836-11eb-9c09-18deaaffb3f9.png)
+<img width="1169" alt="zerofit" src="https://user-images.githubusercontent.com/77275707/109389391-a1de2680-794f-11eb-81a6-c19d60f67a96.png">
 
 * 기능 
 1. 리뷰 게시판 (페이지네이션)
