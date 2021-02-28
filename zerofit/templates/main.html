@@ -57,6 +57,7 @@
                 </a>
             </div>
         </div>
+        <div class="pagination"></div>
     </div>
 
 </div>
@@ -64,40 +65,91 @@
 
 {% block script %}
 <script>
+    let page = 1
+    let size = 3
+
     $(document).ready(function () {
         $("#myreview").html("");
-        showReview();
-        //getUserNickname()
-        let id = "{{user['id']}}"
-        alert('${id}님 반갑습니다!')
+        //showReview();
+        showPaginationReview(page, size)
     });
 
-    function showReview(){
+    // 모든 리뷰 가져오기
+    // function showReview(){
+    //     $.ajax({
+    //         type: 'GET',
+    //         url: '/list',
+    //         data: {},
+    //         success: function (response) {
+    //             if (response['result'] == 'success') {
+    //                 let reviews = response['reviews'];
+    //                 for (let i = 0; i < reviews.length; i++) {
+    //                     let image = reviews[i]['image'];
+    //                     let user_info = reviews[i]['user_info'];
+    //                     let title = reviews[i]['title'];
+    //                     let desc = reviews[i]['desc'];
+    //                     let temp = `<div class="item">
+    //                                         <a href="#">
+    //                                             <img alt="review.subTitle" class="" src="../static/images/${image}">
+    //                                             <div class="from p2">${user_info}</div>
+    //                                             <div class="subtit fwb p2">${title}</div>
+    //                                             <div class="desc l3">${desc}</div>
+    //                                         </a>
+    //                                     </div>`
+    //                     $('#myreview').append(temp);
+    //                 }
+    //             }
+    //         }
+    //     });
+    // }
+
+    // 리뷰 페이지네이션하여 가져오기
+    function showPaginationReview(page, size){
         $.ajax({
             type: 'GET',
-            url: '/api/list',
-            data: {},
+            url: '/pagingreviews',
+            data: {'page': page,'size': size,
+            },
             success: function (response) {
-                if (response['result'] == 'success') {
-                    let reviews = response['reviews'];
-                    for (let i = 0; i < reviews.length; i++) {
-                        let image = reviews[i]['image'];
-                        let user_info = reviews[i]['user_info'];
-                        let title = reviews[i]['title'];
-                        let desc = reviews[i]['desc'];
-                        let temp = `<div class="item">
-                                            <a href="#">
-                                                <img alt="review.subTitle" class="" src="../static/images/${image}">
-                                                <div class="from p2">${user_info}</div>
-                                                <div class="subtit fwb p2">${title}</div>
-                                                <div class="desc l3">${desc}</div>
-                                            </a>
-                                        </div>`
-                        $('#myreview').append(temp);
-                    }
+                $('#myreview').empty()
+                $('.pagination').empty()
+                if (response['result'] === 'success') {
+                    let data = response['data']
+                    let total = response['total']
+                    drawReview(data)
+                    drawPagination(total, page, size)
                 }
             }
-        });
+        })
+    }
+
+    function drawReview(data) {
+        for (let i = 0; i < data.length; i++) {
+            let image = data[i]['image'];
+            let user_info = data[i]['user_info'];
+            let title = data[i]['title'];
+            let desc = data[i]['desc'];
+            let temp = `<div class="item">
+                            <a href="#">
+                                <img alt="review.subTitle" class="" src="../static/images/${image}">
+                                <div class="from p2">${user_info}</div>
+                                <div class="subtit fwb p2">${title}</div>
+                                <div class="desc l3">${desc}</div>
+                            </a>
+                        </div>`
+            $('#myreview').append(temp);
+        }
+    }
+
+    function drawPagination(total, page, size) {
+        // 4개 데이터가 있을 때 size가 3이면 2page가 나와야하므로 올림
+        let totalPage = Math.ceil(total / size)
+        for (let i = 0; i < totalPage; i++) {
+            let n = i + 1
+            let active = (page === n) ? 'active' : ''
+            let temp = `<a class="${active}" href="#" onclick="showPaginationReview(${n}, ${size})">${n}</a>`
+            $('.pagination').append(temp)
+        }
     }
 </script>
 {% endblock %}
