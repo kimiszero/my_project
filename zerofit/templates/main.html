@@ -6,7 +6,6 @@
 
 {% block content %}
 
-{{ user }}}
 <div class="section01">
     <img alt="" src="../static/images/main.jpg" class="only_pc">
 </div>
@@ -69,39 +68,10 @@
     let size = 3
 
     $(document).ready(function () {
-        $("#myreview").html("");
-        //showReview();
+        $('#myreview').html('');
+        $('#login').text('로그아웃');
         showPaginationReview(page, size)
     });
-
-    // 모든 리뷰 가져오기
-    // function showReview(){
-    //     $.ajax({
-    //         type: 'GET',
-    //         url: '/list',
-    //         data: {},
-    //         success: function (response) {
-    //             if (response['result'] == 'success') {
-    //                 let reviews = response['reviews'];
-    //                 for (let i = 0; i < reviews.length; i++) {
-    //                     let image = reviews[i]['image'];
-    //                     let user_info = reviews[i]['user_info'];
-    //                     let title = reviews[i]['title'];
-    //                     let desc = reviews[i]['desc'];
-    //                     let temp = `<div class="item">
-    //                                         <a href="#">
-    //                                             <img alt="review.subTitle" class="" src="../static/images/${image}">
-    //                                             <div class="from p2">${user_info}</div>
-    //                                             <div class="subtit fwb p2">${title}</div>
-    //                                             <div class="desc l3">${desc}</div>
-    //                                         </a>
-    //                                     </div>`
-    //                     $('#myreview').append(temp);
-    //                 }
-    //             }
-    //         }
-    //     });
-    // }
 
     // 리뷰 페이지네이션하여 가져오기
     function showPaginationReview(page, size){
@@ -147,9 +117,14 @@
         for (let i = 0; i < totalPage; i++) {
             let n = i + 1
             let active = (page === n) ? 'active' : ''
-            let temp = `<a class="${active}" href="#" onclick="showPaginationReview(${n}, ${size})">${n}</a>`
+            let temp = `<a class="${active}" href="javascript:void(0)" onclick="showPaginationReview(${n}, ${size})">${n}</a>`
             $('.pagination').append(temp)
         }
     }
+
+    function login(){
+
+    }
+
 </script>
 {% endblock %}

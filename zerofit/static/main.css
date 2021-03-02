@@ -94,13 +94,13 @@
     display: flex;
     flex-wrap: wrap;
     width: 1068px!important;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 .content .section03 .sec02 .item-list .item{
     isplay: inline-block;
     width: 336px;
     margin-right: 20px;
-    padding-bottom: 60px;
+    padding-bottom: 30px;
 }
 .content .section03 .sec02 .item-list .item a{
     text-decoration: none;
@@ -136,4 +136,20 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     color: #000000;
+}
+
+.content .section03 .sec02 .pagination{
+    margin-bottom: 30px;
+    margin-left: 500px;
+}
+
+.content .section03 .sec02 .pagination a{
+    margin-right: 10px;
+    color: black;
+    font-size: 20px;
+}
+
+.content .section03 .sec02 .pagination a.active{
+    font-weight: bold;
+    color: #6400c8;
 }
