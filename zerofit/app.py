@@ -8,6 +8,7 @@ from flask import Flask, render_template, jsonify, request, redirect, url_for, g
 app = Flask(__name__)
 
 client = MongoClient('localhost', 27017)
+#client = MongoClient('mongodb://test:test@localhost',27017)
 db = client.dbsparta
 
 SECRET_KEY = 'hello world'
@@ -53,6 +54,30 @@ def login():
 @app.route('/join')
 def join():
     return render_template('join.html')
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
+
+@app.route('/api/register', methods=['POST'])
+def api_register():
+    userAddress_receive = request.form['userAddress_give']
+    userPurpose_receive = request.form['userPurpose_give']
+    sportsType_receive = request.form['sportsType_give']
+    userSex_receive = request.form['userSex_give']
+    userAge_receive = request.form['userAge_give']
+    selectDate_receive = request.form['selectDate_give']
+
+    doc = {
+        'userAddress': userAddress_receive,
+        'userPurpose': userPurpose_receive,
+        'sportsType': sportsType_receive,
+        'userSex': userSex_receive,
+        'userAge': userAge_receive,
+        'selectDate': selectDate_receive
+    }
+    db.registers.insert_one(doc)
+    return jsonify({'result': 'success', 'msg': '수업 신청 완료!'})
 
 # JSON 응답  :: 리뷰 페이지네이션으로 가져오기
 @app.route('/pagingreviews', methods=['GET'])

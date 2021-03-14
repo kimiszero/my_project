@@ -1,0 +1,90 @@
+.content{
+    color: #4a4a4a;
+    margin: 0;
+    margin-top: 130px;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+.content .reg_wrapper{
+    width: 940px;
+    margin: 30px auto;
+}
+.content .reg_wrapper .section01{
+    max-width: unset;
+    padding: 60px 0 30px 32px;
+}
+.content .reg_wrapper .section01 strong{
+    display: block;
+    margin-bottom: 16px;
+    color: #000;
+    font-size: 24px;
+    font-weight: bolder;
+}
+.content .reg_wrapper .section01 p{
+    margin: 0;
+    padding: 0;
+}
+.content .reg_wrapper .section02{
+    border-top: 1px solid #e1e1eb;
+    display: block;
+
+}
+.content .reg_wrapper .section02 .wrapper{
+    max-width: 394px;
+    padding: 0;
+    margin: 0;
+    width: 940px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.content .reg_wrapper .section02 .wrapper .con{
+    margin: 0;
+    padding-left: 10px;
+}
+.content .reg_wrapper .section02 .wrapper .con div{
+    display: flex;
+    position: relative;
+    padding: 7px 0;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    border-top: 1px solid #e1e1eb;
+}
+.content .reg_wrapper .section02 .wrapper .con input{
+    width: 250px;
+    height: 38px;
+    line-height: 38px;
+    border-radius: 20px;
+    border-color: #e1e1eb;
+}
+.content .reg_wrapper .section03{
+    position: fixed;
+    z-index: 80;
+    bottom: 0;
+    width: 100%;
+    max-width: 560px;
+    text-align: right;
+    border-top: 1px solid #e1e1eb;
+    background: #fff;
+    height: 110px;
+    margin: 9px 0 0;
+    padding: 24px 0 8px;
+}
+.content .reg_wrapper .section03 a{
+    top: 50%;
+    left: 32px;
+    height: auto;
+    padding-left: 28px;
+    position: absolute;
+}
+.content .reg_wrapper .section03 input{
+    width: 200px;
+    height: 56px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #6400c8;
+}
