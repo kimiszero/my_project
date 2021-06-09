@@ -1,5 +1,5 @@
 # project name :: zerofit 
-### HOMEFIT 클론코딩 [2021.02 - 2021. ??]
+### HOMEFIT 클론코딩 [2021.02 - 2021. 03]
 
 <img width="1169" alt="zerofit" src="https://user-images.githubusercontent.com/77275707/109389391-a1de2680-794f-11eb-81a6-c19d60f67a96.png">
 
